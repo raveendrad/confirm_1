@@ -484,6 +484,8 @@
     <Content Include="assets\img\background.png" />
     <Content Include="assets\img\client-01.png" />
     <Content Include="assets\img\confirmlogo1.png" />
+    <Content Include="assets\img\confirm_fav_new.png" />
+    <Content Include="assets\img\confirm_logo_new.png" />
     <Content Include="assets\img\debt-free-getty.gif" />
     <Content Include="assets\img\favicon.jpg" />
     <Content Include="assets\img\finance.gif" />
@@ -594,6 +596,7 @@
     <Content Include="assets\webfonts\fa-solid-900.woff2" />
     <Content Include="assets\webfonts\fa-solid-900d41d.eot" />
     <Content Include="assets\img\loan1.webp" />
+    <Content Include="assets\img\confirm_logo.psd" />
     <None Include="packages.config" />
     <Content Include="Views\shared\_LayoutPage1.cshtml" />
     <Content Include="Views\home\Index.cshtml" />
