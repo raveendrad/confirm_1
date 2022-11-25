@@ -5,7 +5,8 @@
 }
 <script src="~/assets/site_js/Register.js"></script>
 <link href="~/assets/css/templatemo-finance-business.css" rel="stylesheet" />
-<script src="~/assets/site_js/LoanInformation.js"></script>
+<script src="~/assets/site_js/Register.js"></script>
+
 <!-- ***** Preloader Start ***** -->
 <div id="preloader">
     <div class="jumper">
@@ -65,10 +66,10 @@
 
 <div class="container-fluid" id="Cinfo">
     <div class="row">
-        <div class="col-6">
-            <div class="card p-4 mt-5">
+        <div class="col-12 col-md-6">
+            <div class="card p-4 mt-4">
                 <div class="row g-3">
-                    <div class="col-12 mb-4">
+                    <div class="col-12 mb-2">
                         <h3 class="font-bold">Personal details...</h3>
 
                     </div>
@@ -146,228 +147,152 @@
                         </div>
                     </div>
                     <p id="msg" class="alert-danger"></p>
-                    <div class="col-12 mt-4">
-                        <button type="button" class="btn text-white m-4" style="background: #A020F0" onclick="saveItem();" data-mdb-ripple-color="dark">Save</button>
-                        <button class="btn btn-outline-light   shadow " style="background: #A020F0" type="submit" data-bs-toggle="modal" data-bs-target="#loaninfo">Add Loan</button>
+                    <div class="col-12 ">
+                        <button type="button" class="btn btn-lg text-white mx-4" style="background: #A020F0" onclick="saveItem();" data-mdb-ripple-color="dark">Save</button>
+                        @*<button class="btn btn-outline-light   shadow " style="background: #A020F0" type="submit" data-bs-toggle="modal" data-bs-target="#loaninfo">Add Loan</button>*@
                     </div>
 
                 </div>
             </div>
         </div>
-        <div class="col-6 mt-5">
-            <div class="col-lg-8 " style="position:relative;display:inline;">
-                <div>
-                    <div id="content_area">
+        <div class="col-12 col-md-6 mt-5">
+            @*<div class="col-lg-8 " style="position:relative;display:inline;">
+                    <div>
+                        <div id="content_area">
+                        </div>
+
                     </div>
 
-                </div>
+                </div>*@
 
+            <div class="row my-4">
+                <div class="col-md-3 col-4 mobile-small text-center " style="background-image: url('/assets/img/mobile-1.png'); background-repeat:no-repeat;padding-top:120px;padding-bottom:120px;background-size:100% 100%;">
+                    <span class="fs-4 fs font-weight-bold"> Resolve/ Refinance Your debt</span><br />
+                    <span class="fs-1">
+                        <a class="btn  shadow font-weight-bold mt-2 text-white btn-lg" href="~/home/ItWorks" style="background-color: #A020F0;">Enter</a>
+                    </span>
+                </div>
+                <div class="col-md-3 col-4 mobile-small text-center " style="background-image: url('/assets/img/mobile-1.png'); background-repeat: no-repeat; padding-top: 120px; padding-bottom: 120px; background-size: 100% 100%;">
+                    <span class="fs-4 fs font-weight-bold"> Savings & Investment</span>
+                    <span class="fs-1">
+                        <button class="btn  shadow font-weight-bold mt-2 text-white btn-lg" style="background-color: #A020F0;margin-top:50px !important" data-bs-toggle="modal" data-bs-target="#invest">Enter</button>
+                    </span>
+                </div>
+                <div class="col-md-3 col-4 mobile-small text-center " style="background-image: url('/assets/img/mobile-1.png'); background-repeat: no-repeat; padding-top: 120px; padding-bottom: 120px; background-size: 100% 100%;">
+                    <span class="fs-4 fs  font-weight-bold"> Get Credit</span>
+                    <span class="fs-1">
+                        <button class="btn  shadow font-weight-bold mt-2 text-white btn-lg" style="background-color: #A020F0;margin-top:80px !important"  data-bs-toggle="modal" data-bs-target="#invest">Enter</button>
+                    </span>
+                </div>
             </div>
         </div>
 
     </div>
-    <div class="modal" id="loaninfo" role="dialog">
-        <div class="modal-dialog  modal-lg " role="document">
-            <div class="modal-content ">
-                <div class="modal-header">
-                    <h5 class="modal-title font-bold">Please Enter Loan Information</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-                    </button>
-                </div>
-                <div class="row ">
-                    <div class="col-12">
-                        <div class="card p-4 ">
-                            <div class="row g-3" style="line-height:40px;">
-
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <input type="hidden" id="loan_information_id" value="0">
-                                        <label class="form-label">Type of lender<span style="color:#ff0000">*</span></label>
-                                        <select class="form-control h-10" id="lender_type">
-                                            <option value="">Select lender type</option>
-                                            <option value="Digital/Online">Digital/Online</option>
-                                            <option value="Traditional/Offline">Traditional/Offline</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Loan service provider</label>
-                                        <select class="form-control h-10" value="" id="Loanprovider_head" placeholder="Select Regulated Entity">
-                                        </select>
-                                    </div>
-                                </div>
-                                @*<div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Loan service provider</label>
-                                        <input type="text" id="loan_service_provider" placeholder="Enter Loan Service Provider" class="form-control"/>
-                                    </div>
-                                </div>*@
-
-                                @*<div class="col-lg-6 col-md-12">
-            <div>
-                <label class="form-label">Loan service provider</label>
-                <select class="form-control h-10" id="loan_service_provider">
-                    <option value="0">Select loan Service Provider</option>
-                    <option value="List Not Provided">List Not Provided</option>
-                    <option value="List Will Provide">List Will Provide</option>
-                </select>
-            </div>
-        </div>*@
-
-                                @*<div class="col-lg-6 col-md-12">
-        <div>
-            <label class="form-label">Regulated Entity</label>
-            <select class="form-control h-10" id="Loanprovider_head" placeholder="Select Regulated Entity">
-            </select>
-        </div>
-        </div>*@
-
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Regulated Entity</label>
-                                        <select class="form-control h-10" id="regulated_entity">
-                                            <option value="">Select Regulated Entity</option>
-                                            <option value="Bank">Bank</option>
-                                            <option value="NBFC">NBFC</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Loan Type<span style="color:#ff0000">*</span></label>
-                                        <select class="form-control h-10" id="loan_type">
-                                            <option value="">Select Loan Type</option>
-                                            <option value="Secured">Secured</option>
-                                            <option value="Unsecured">Unsecured</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Tenure<span style="color:#ff0000">*</span></label>
-                                        <select class="form-control h-10" id="loan_tenure">
-                                            <option value="">Select Tenure</option>
-                                            <option value="<Month">Less than 1 Month</option>
-                                            <option value="Month">1 Month</option>
-                                            <option value="2 Months">2 Months</option>
-                                            <option value="3 Months">3 Months</option>
-                                            <option value="4 Months">4 Months</option>
-                                            <option value="5 Months">5 Months</option>
-                                            <option value="6 Months">6 Months</option>
-                                            <option value="6 - 12 Months">6 - 12 Months</option>
-                                            <option value="12 - 24 Months">12 - 24 Months</option>
-                                            <option value="More than 24 Months">More than 24 Months</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Delenquency Bucket / Delay(in days)<span style="color:#ff0000">*</span></label>
-                                        <select class="form-control h-10" id="loan_delay">
-                                            <option value="">Select Delay(in days)</option>
-                                            <option value="Less than 15 days">Less than 15 days</option>
-                                            <option value="15 to 30 days">15 to 30 days</option>
-                                            <option value="31 to 60 days">31 to 60 days</option>
-                                            <option value="61 to 90 days">61 to 90 days</option>
-                                            <option value="91 to 180 days">91 to 180 days</option>
-                                            <option value="More than 180 days">More than 180 days</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Total Emi's</label>
-                                        <input type="number" id="toatl_emis" placeholder="Total Emi's'" class="form-control   " />
-                                    </div>
-
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Loan Account Number</label>
-                                        <input type="text" value="" id="loan_account_number" placeholder="Enter loan account number" class="form-control   " />
-                                    </div>
-
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Principal Amount<span style="color:#ff0000">*</span></label>
-                                        <input type="number" id="principal_amount" placeholder="Enter Principal amaount" min="0" value="" onkeyup="keyupFunction()" class="form-control    " />
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Processing Fee</label>
-                                        <input type="number" id="processing_fee" onkeyup="keyupFunction()" min="0" value="0" placeholder="Enter Processing fee" class="form-control    " />
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Insurance</label>
-                                        <input type="number" id="Insurance_amount" onkeyup="keyupFunction()" min="0" value="0" placeholder="Insurance Amount" class="form-control    " />
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Interest </label>
-                                        <input type="number" id="interest" onkeyup="keyupFunction()" min="0" value="0" placeholder=" Interest" class="form-control    " />
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Other charges</label>
-                                        <input type="number" id="other_charges" onkeyup="keyupFunction()" min="0" value="0" placeholder="Other Charges" class="form-control    " />
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Total Amount o/s<span style="color:#ff0000">*</span></label>
-                                        <input type="number" id="total_outstanding_amount" placeholder="Total amount" class="form-control   " />
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-control-label">Reason looking for settlement</label>
-                                        <select class="form-control h-10" id="settlement_reason">
-                                            <option value="0">Select Reason</option>
-                                            <option value="No job / Job loss">No job / Job loss</option>
-                                            <option value="High charges">High charges</option>
-                                            <option value="Need time to pay">Need time to pay</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div>
-                                        <label class="form-label">Upload loan related documents</label>
-                                        <input type="file" id="loan_document" class="form-control  " />
-                                    </div>
-                                </div>
-                                <p id="err" class="alert-danger"></p>
-                                <div class="col-lg-6 col-md-12 mt-3">
-                                    <div>
-                                        <button type="button" class="btn bg-primary text-white m-4" onclick="saveLoanInfo();" data-mdb-ripple-color="dark">Continue for settlement</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    @*<div class="modal" id="loaninfo" role="dialog">
+            <div class="modal-dialog  modal-lg " role="document">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <h5 class="modal-title font-bold">Please Enter Loan Information</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        </button>
                     </div>
+
                 </div>
+            </div>
+        </div>*@
+</div>
+
+<div class="modal " id="invest" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header text-center text-white font-weight-bold" style="background-color: #A020F0">
+
+                <h5 class="modal-title" id="staticBackdropLabel">Savings & Investments</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+
+                <img src="~/assets/img/comingsoon.gif" />
+                <p class="fs-4 text-center text-black"> Watchout this space for more, launching soon....</p>
+                <button class="btn  shadow font-weight-bold mt-2 text-white btn-lg" style="background-color: #A020F0;" data-bs-toggle="modal" data-bs-target="#">Join Now!<i class="fa fa-right-long" style="padding-left:10px"></i></button>
 
             </div>
+
         </div>
+
     </div>
 </div>
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		// set initially button state hidden
+		$("#btn").hide();
+		// use keyup event on email field
+		$("#email").keyup(function(){
+			if(validateEmail()){
+				// if the email is validated
+				// set input email border green
+				$("#email").css("border","2px solid green");
+				// and set label
+				$("#emailMsg").html("<p class='text-success'>Validated</p>");
+			}else{
+				// if the email is not validated
+				// set border red
+				$("#email").css("border","2px solid red");
+				$("#emailMsg").html("<p class='text-danger'>Un-validated</p>");
+			}
+			buttonState();
+		});
+		// use keyup event on password
+		$("#pass").keyup(function(){
+			// check
+			if(validatePassword()){
+				// set input password border green
+				$("#pass").css("border","2px solid green");
+				//set passMsg
+				$("#passMsg").html("<p class='text-success'>Password validated</p>");
+			}else{
+					// set input password border red
+				$("#pass").css("border","2px solid red");
+				//set passMsg
+				$("#passMsg").html("<p class='text-danger'>Password not valid</p>");
+			}
+			buttonState();
+		});
+	});
+
+	function buttonState(){
+		if(validateEmail() && validatePassword()){
+			// if the both email and password are validate
+			// then button should show visible
+			$("#btn").show();
+		}else{
+			// if both email and pasword are not validated
+			// button state should hidden
+			$("#btn").hide();
+		}
+	}
+	function validateEmail(){
+		// get value of input email
+		var email=$("#email").val();
+		// use reular expression
+		 var reg = /^\w+([-+.']\w+)*\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+		 if(reg.test(email)){
+		 	return true;
+		 }else{
+		 	return false;
+		 }
+
+	}
+	function validatePassword(){
+		//get input password value
+		var pass=$("#pass").val();
+		// check it s length
+		if(pass.length > 7){
+			return true;
+		}else{
+			return false;
+		}
+
+	}
+</script>

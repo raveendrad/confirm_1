@@ -1,4 +1,4 @@
-﻿
+﻿var custid = localStorage.getItem('customer_id');
 var IsActive = false;
 
  $(document).ready(function () {
@@ -6,7 +6,6 @@ var IsActive = false;
      if (localStorage.getItem('razorpay_payment_id') != undefined) {
         
          let today = new Date().toISOString().slice(0, 10)
-
 
              var payment_id = 0;
              var customer_id = localStorage.getItem("customer_id");
@@ -54,30 +53,10 @@ var IsActive = false;
              }
   
      }
-    //if (localStorage.getItem('LoginStatus')==="true") { 
-    //    $("#name").text(localStorage.getItem('custName'));
-    //    custId = localStorage.getItem('custId');
-      
-    //}
+   
      editEntry();
 
-    //var query = window.location.search.substring(1);
-    //var vars = query.split('&');
-    //for (var i = 0; i < vars.length; i++) {
-    //    var pair = vars[i].split('=');
-
-    //    customer_id = pair[1];
-    //}
-   
-    //api_url = $("#hfApiUrl").val();
-    //$("#btnRegister").click(function () {
-    //    saveItem(); 
-
-    //});
-    //$("#btnReset").click(function () {
-    //    debugger;
-    //    resetPassword();
-    //});
+    
     $("#btnLogin").click(function () {
         Login();
     }); 
@@ -85,15 +64,13 @@ var IsActive = false;
         saveCustomerInfo();
     });
     
-    // $("#btnLoanInfo").click(function () {
-    //     debugger;
-    //    saveLoanInfo();
-    //});
+    
 });
 
 
 
 function saveItem() {
+
     var validation_email = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
     var validation_pincode = /(^\d{6}$)/;
     //var validation_adhar = /^ [2 - 9]{ 1}[0 - 9]{ 3 } \\s[0 - 9]{ 4 } \\s[0 - 9]{ 4 } $ /;
@@ -151,7 +128,6 @@ function saveItem() {
         $("#adhaar_card").focus();
     }
     else if (adhaar_card.replace(/ /g, '').length < 12) {
-        debugger;
         isValidationPassed = false;
         $("#msg").text("Aadhar is not valid");
         $("#adhaar_card").focus();
@@ -171,16 +147,6 @@ function saveItem() {
         $("#msg").text("Pancard should be valid..");
         $("#pan_card").focus();
     }
-    //else if (!validation_adhar.test(adhaar_card)) {
-    //    isValidationPassed = false;
-    //    $("#msg").text("Aadhar should be valid..");
-    //    $("#adhaar_card").focus();
-    //}
-    //else if (pincode != 6) {
-    //    isValidationPassed = false;
-    //    $("#msg").text("Pincode should be valid..");
-    //    $("#pincode").focus();
-    //}
    
     if (isValidationPassed == true) {
         var requestData =
@@ -212,12 +178,10 @@ function saveItem() {
             data: jsonData,
             contentType: "application/json; charset=utf-8",
             beforeSend: function () {
-               // runLoader();
             },
             success: function (result) {
                 if (result.status == true) {
-                    //showData();
-                   // stopLoader();
+                   
 
                 }
                 else {
@@ -225,11 +189,9 @@ function saveItem() {
                 }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                //stopLoader();
                 alert("Error on saving . Please try again.");
             },
             complete: function () {
-               // stopLoader();
                 window.location.href = window.location.href;
 
             },
@@ -248,7 +210,6 @@ function saveCustomerInfo() {
     var state = $("#state").val();
     var adhaar_card = $("#adhaar_card").val();
     var pan_card = $("#pan_card").val();
-
 
     var isValidationPassed = true;
 
@@ -274,32 +235,20 @@ function saveCustomerInfo() {
             data: jsonData,
             contentType: "application/json; charset=utf-8",
             beforeSend: function () {
-                //runLoader();
             },
             success: function (result) {
-                // stopLoader("#save-item");
                 if (result.status == true) {
-                    //alert(result.message);
                     showData();
-                    //stopLoader();
-                    //Silent Activity Log
-                    //if (id == 0) {
-                    //    saveActivityLog("Added a new user", requestData);
-                    //}
-                    //else {
-                    //    saveActivityLog("Updated the user entry", requestData);
-                    //}
+                   
                 }
                 else {
                     alert(result.message);
                 }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                //stopLoader();
                 alert("Error on saving CustomerInfo. Please try again.");
             },
             complete: function () {
-                //stopLoader();
                 window.location.href = '/home/CustomerInfo';
             },
         });
@@ -307,25 +256,22 @@ function saveCustomerInfo() {
 }
 
 function editEntry() {
-
+    debugger;
     var mobile = localStorage.getItem("mobile_number");
  
     $("#contact_number").val(mobile);
 
     $("#contact_number").prop("readonly", true);
-    //alert("ok");
     $.ajax({
         url: 'http://confirmfinance-api.alongx.com/api/Customer?mobile_number=' + mobile,
         type: 'GET',
         dataType: 'json',
         contentType: "application/json; charset=utf-8",
         beforeSend: function () {
-            //runLoader("#modal-body", "Loading '<b>" + $("#hf_name_" + id + "").val() + "'</b>...");
-            //clearEntry();
+           
         },
         success: function (result) {
    
-            //stopLoader("#modal-body");
             $("#customer_id").val(result[0].customer_id);
             $("#cname").val(result[0].name);
             $("#email").val(result[0].email);
@@ -342,11 +288,8 @@ function editEntry() {
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
 
-            //stopLoader("#modal-body");
-            //error("Error on loading category '<b>" + $("#hf_name_" + id + "").val() + "</b>'. Please try again.", "modal-body");
         },
         complete: function () {
-            //stopLoader("#modal-body");
         },
     });
 }
@@ -386,9 +329,9 @@ function getLoanProvider() {
 }
 
 function saveLoanInfo() {
-    debugger;
+
     var loan_information_id = $("#loan_information_id").val();
-    var customer_id = $("#customer_id").val();
+    var customer_id = custid;
     var loan_provider_id = $("#Loanprovider_head").val();
     var lender_type = $("#lender_type").val();
     var loan_service_provider = $("#Loanprovider_head").val();
@@ -410,21 +353,12 @@ function saveLoanInfo() {
     var loan_account_number = $("#loan_account_number").val();
     var isValidationPassed = true;
    
-    //if (lender_type === "" || lender_type == undefined) {
-    //    isValidationPassed = false;
-    //    loader("Type of lender is required..");
-    //    $("#lender_type").focus();
-    //}
     if (lender_type === "" || lender_type === undefined) {
         isValidationPassed = false;
         $("#err").text("Lender type is required");
         $("#lender_type").focus();
     }
-    //else if (loan_service_provider === "" || loan_service_provider === undefined) {
-    //    isValidationPassed = false;
-    //    $("#err").text("Loan Service provider is required");
-    //    $("#loan_service_provider").focus();
-    //}
+   
     else if (regulated_entity === "" || regulated_entity === undefined) {
         isValidationPassed = false;
         $("#err").text("Regulated entity is required");
@@ -486,36 +420,22 @@ function saveLoanInfo() {
             data: jsonData,
             contentType: "application/json; charset=utf-8",
             beforeSend: function () {
-                //runLoader();
             },
             success: function (result) {
-                // stopLoader("#save-item");
                 if (result.status == true) {
-                    //alert(result.message);
-                   // showData();
-                    //stopLoader();
-                    //Silent Activity Log
-                    //if (id == 0) {
+                   
                     loader("Loan Information Saved Sucessfully..");
-                  
-                    //    saveActivityLog("Added a new user", requestData);
-                    //}
-                    //else {
-                    //    saveActivityLog("Updated the user entry", requestData);
-                    //}
+                   
                 }
                 else {
                     alert(result.message);
                 }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                //stopLoader();
                 alert("Error on saving Loan Information. Please try again.");
             },
             complete: function () {
-                //stopLoader();
                 window.location.href = window.location.href;
-                //resetSaveItemFields();
                
             },
            
@@ -568,6 +488,8 @@ function Logout() {
     localStorage.removeItem('status');
     localStorage.removeItem('rzp_checkout_anon_id');
     localStorage.removeItem('total_payable_inclde');
+    localStorage.removeItem('loan_information_id');
+    localStorage.removeItem('_grecaptcha');
     localStorage.removeItem('currency');
     localStorage.removeItem('mobile_number');
     localStorage.removeItem('amount');
@@ -580,7 +502,7 @@ function Logout() {
     //window.location.href = "localstorage-part3.html";
 }
 
-    
+
 function sbscribe(loanIfoId) {
     localStorage.setItem("loan_information_id", loanIfoId);
     $.ajax({

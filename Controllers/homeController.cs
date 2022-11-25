@@ -72,9 +72,9 @@ namespace confirm_finance.Controllers
         //                Random random = new Random();
         //                //string randomName = random.Next(1, 999).ToString()+ random.Next(1, 999).ToString();
         //                string fileName = Path.GetFileName(display_pic_file.FileName);
-        //                string bannerFile = Path.Combine(this.Server.MapPath("~/FILE-SYSTEM/CATEGORY"), fileName);
+        //                string bannerFile = Path.Combine(this.Server.MapPath("~/FILE-SYSTEM"), fileName);
 
-        //                string dbImageFileUrl = ConfigurationManager.AppSettings["storage_url"] + "/FILE-SYSTEM/CATEGORY/" + fileName;
+        //                string dbImageFileUrl = ConfigurationManager.AppSettings["storage_url"] + "/FILE-SYSTEM" + fileName;
         //                requestObj.file = dbImageFileUrl;
         //                loan_document.SaveAs(bannerFile);
         //            }

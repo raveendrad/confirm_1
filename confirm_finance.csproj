@@ -483,6 +483,7 @@
     <Content Include="assets\img\about.JPG" />
     <Content Include="assets\img\background.png" />
     <Content Include="assets\img\client-01.png" />
+    <Content Include="assets\img\comingsoon.gif" />
     <Content Include="assets\img\confirmlogo1.png" />
     <Content Include="assets\img\confirm_fav_new.png" />
     <Content Include="assets\img\confirm_logo_new.png" />
@@ -510,6 +511,9 @@
     <Content Include="assets\img\logopre copy.png" />
     <Content Include="assets\img\logopre.JPG" />
     <Content Include="assets\img\main.png" />
+    <Content Include="assets\img\mobile-1.png" />
+    <Content Include="assets\img\mobile.jpg" />
+    <Content Include="assets\img\mobile2.png" />
     <Content Include="assets\img\more-info.jpg" />
     <Content Include="assets\img\page-heading-bg.jpg" />
     <Content Include="assets\img\payment.gif" />
@@ -517,6 +521,7 @@
     <Content Include="assets\img\round copy.png" />
     <Content Include="assets\img\round1.png" />
     <Content Include="assets\img\roundnew.png" />
+    <Content Include="assets\img\samsung-3917310_960_720.png" />
     <Content Include="assets\img\service_01.jpg" />
     <Content Include="assets\img\service_02.jpg" />
     <Content Include="assets\img\service_03.jpg" />

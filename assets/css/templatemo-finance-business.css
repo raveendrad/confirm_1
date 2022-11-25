@@ -74,7 +74,7 @@ a.border-button {
 
 .section-heading {
 	text-align: center;
-	margin-bottom: 80px;
+	margin-bottom: 20px;
 }
 
 	.section-heading h2 {
@@ -417,7 +417,8 @@ header {
 }
 @media (min-width: 768px) {
 	.submit {
-		height: 450px !important
+		height: 350px !important;
+		width:300px
 	}
 }
 @media (max-width: 767px) {
@@ -482,7 +483,7 @@ header {
 	}
 
 .bg-mybutton {
-	background-color: #83fe42 !important
+	background-color: white !important
 }
 .Modern-Slider .item h6 {
 	margin-bottom: 15px;
@@ -1518,7 +1519,7 @@ header {
 	}
 
 	@media (max-width: 992px) {
-		.navbar .navbar-brand {
+		.navbar .main-logo {
 			position: absolute;
 			left: 30px;
 			top: 10px;
@@ -2445,7 +2446,7 @@ img:hover {
 	}
 
 	.control {
-		font-size: 50px;
+		font-size: 35px;
 	}
 
 	.content {
@@ -2498,8 +2499,38 @@ img:hover {
 		}
 	}
 
-	@media only screen and (min-width: 380px) {
-		.pay {
-			width: 50% !important;
-		}
+@media only screen and (min-width: 380px) {
+	.pay {
+		width: 50% !important;
 	}
+}
+@media only screen and (min-width: 1300px) {
+	.fs-5 {
+		font-size: 15px !important;
+	}
+}
+@media only screen and (max-width: 1300px) {
+	.fs-5 {
+		font-size:13px !important;
+	}
+}
+@media only screen and (min-width: 1300px) {
+	.fs-6 {
+		font-size: 13px !important;
+	}
+}
+@media only screen and (max-width: 1300px) {
+	.fs-6 {
+		font-size: 10px !important;
+	}
+}
+@media only screen and (max-width: 1300px) {
+	.mobile-small {
+		padding-top: 50px !important;
+		padding-bottom: 50px !important;
+	}
+}
+
+#save {
+	visibility: hidden;
+}
